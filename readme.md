@@ -13,13 +13,13 @@ _Structure Mapper is a Go-based utility that prints a visual representation of a
 
 </div>
 
-## Features
+## Features ✨
 
 - Prints a directory tree with folder icons.
 - Excludes specified directories from the tree.
 - Simple and easy to use.
 
-## Installation
+## Installation 🚀
 
 1. Clone the repository:
 
@@ -45,7 +45,7 @@ _Structure Mapper is a Go-based utility that prints a visual representation of a
    make run <target_directory> [exceptions...]
    ```
 
-## Usage
+## Usage 📚
 
 To run the script, use the following command:
 
@@ -53,7 +53,7 @@ To run the script, use the following command:
 structure-mapper.exe <target_directory> [exceptions...]
 ```
 
-## Example
+## Example 📖
 
 Running the following command:
 
@@ -72,14 +72,14 @@ Might produce an output like this:
     └──📁 subfolder3
 ```
 
-## Contributing
+## Contributing 🤝
 
 Contributions are welcome! If you would like to contribute to the project, please open an issue or a pull request.
 
-## License
+## License 📝
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Contact
+## Contact 📧
 
 For any questions or suggestions, please open an issue.
