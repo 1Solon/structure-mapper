@@ -8,8 +8,8 @@ _Structure Mapper is a Go-based utility that prints a visual representation of a
 
 <div align="center">
 
-![GitHub Repo stars](https://img.shields.io/github/stars/1Solon/Home-Server-Configuration?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/1Solon/Home-Server-Configuration?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/1Solon/structure-mapper?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/1Solon/structure-mapper?style=for-the-badge)
 
 </div>
 
