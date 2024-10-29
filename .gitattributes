@@ -1,0 +1,17 @@
+# Default behavior is to treat files as binary unless otherwise specified
+* text=auto
+
+# Editor files
+*.go text
+*.md text
+*.txt text
+*.yaml text
+*.yml text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.exe binary
+*.dll binary
