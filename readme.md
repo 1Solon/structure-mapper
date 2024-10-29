@@ -43,13 +43,24 @@ To run the script, use the following command:
 go run repo-mapper.go <target_directory> [exceptions...]
 ```
 
-### Example
+## Example
+
+Running the following command:
 
 ```sh
 go run repo-mapper.go /path/to/target_directory dir_to_exclude1 dir_to_exclude2
 ```
 
-This will print the directory tree of `/path/to/target_directory`, excluding `dir_to_exclude1` and `dir_to_exclude2`.
+Might produce an output like this:
+
+```md
+📁
+├──📁 folder1
+│   ├──📁 subfolder1
+│   └──📁 subfolder2
+└──📁 folder2
+    └──📁 subfolder3
+```
 
 ## Contributing
 
