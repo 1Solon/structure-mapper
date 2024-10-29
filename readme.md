@@ -66,10 +66,10 @@ Might produce an output like this:
 ```md
 📁
 ├──📁 folder1
-│ ├──📁 subfolder1
-│ └──📁 subfolder2
+│   ├──📁 subfolder1
+│   └──📁 subfolder2
 └──📁 folder2
-└──📁 subfolder3
+    └──📁 subfolder3
 ```
 
 ## Contributing
