@@ -13,8 +13,6 @@ _Structure Mapper is a Go-based utility that prints a visual representation of a
 
 </div>
 
-Structure Mapper is a Go-based utility that prints a visual representation of a directory tree, excluding user specified exceptions.
-
 ## Features
 
 - Prints a directory tree with folder icons.
