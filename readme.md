@@ -21,26 +21,36 @@ _Structure Mapper is a Go-based utility that prints a visual representation of a
 
 ## Installation
 
-1. Ensure you have [Go](https://golang.org/dl/) installed.
+1. Clone the repository:
 
-2. Clone the repository:
+   ```sh
+   git clone <repository-url>
+   ```
 
-```sh
-git clone <repository-url>
-```
+2. Navigate to the project directory:
 
-1. Navigate to the project directory:
+   ```sh
+   cd structure-mapper
+   ```
 
-```sh
-cd structure-mapper
-```
+3. Build the project:
+
+   ```sh
+   make build
+   ```
+
+4. Run the script:
+
+   ```sh
+   make run <target_directory> [exceptions...]
+   ```
 
 ## Usage
 
 To run the script, use the following command:
 
 ```sh
-go run repo-mapper.go <target_directory> [exceptions...]
+structure-mapper.exe <target_directory> [exceptions...]
 ```
 
 ## Example
@@ -48,7 +58,7 @@ go run repo-mapper.go <target_directory> [exceptions...]
 Running the following command:
 
 ```sh
-go run repo-mapper.go /path/to/target_directory dir_to_exclude1 dir_to_exclude2
+structure-mapper.exe /path/to/target_directory dir_to_exclude1 dir_to_exclude2
 ```
 
 Might produce an output like this:
@@ -56,10 +66,10 @@ Might produce an output like this:
 ```md
 📁
 ├──📁 folder1
-│   ├──📁 subfolder1
-│   └──📁 subfolder2
+│ ├──📁 subfolder1
+│ └──📁 subfolder2
 └──📁 folder2
-    └──📁 subfolder3
+└──📁 subfolder3
 ```
 
 ## Contributing
