@@ -33,16 +33,18 @@ _Structure Mapper is a Go-based utility that prints a visual representation of a
    cd structure-mapper
    ```
 
-3. Build the project:
+3. Install the tool
+
+   Installing with Make:
 
    ```sh
-   make build
+   make install
    ```
 
-4. Run the script:
+   Installing with Go:
 
    ```sh
-   make run <target_directory> [exceptions...]
+   go install github.com/1Solon/structure-mapper
    ```
 
 ## 📚 Usage
