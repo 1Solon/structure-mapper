@@ -50,7 +50,25 @@ _Structure Mapper is a Go-based utility that prints a visual representation of a
 To run the script, use the following command:
 
 ```sh
-structure-mapper.exe <target_directory> [exceptions...]
+structure-mapper.exe <target_directory>
+```
+
+You can also exclude directories from the tree by specifying them as arguments:
+
+```sh
+structure-mapper.exe -e dir_to_exclude1, dir_to_exclude2 <target_directory>
+```
+
+To display the directory tree up to a certain depth, use the `-d` flag:
+
+```sh
+structure-mapper.exe -d 2 <target_directory>
+```
+
+If you need a refresher on the available options, use the `-h` flag:
+
+```sh
+structure-mapper.exe -h
 ```
 
 ## 📖 Example
@@ -58,7 +76,7 @@ structure-mapper.exe <target_directory> [exceptions...]
 Running the following command:
 
 ```sh
-structure-mapper.exe /path/to/target_directory dir_to_exclude1 dir_to_exclude2
+structure-mapper.exe -e dir_to_exclude1, dir_to_exclude2 -d 2 /path/to/target_directory
 ```
 
 Might produce an output like this:
