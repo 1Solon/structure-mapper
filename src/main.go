@@ -13,6 +13,13 @@ func main() {
 	depthFlag := flag.Int("d", -1, "maximum recursion depth (-1 for unlimited)")
 	exceptionsFlag := flag.String("e", "", "comma-separated list of directories to exclude")
 
+	// Define custom usage function
+	flag.Usage = func() {
+		fmt.Fprintf(os.Stderr, "Usage: %s [options] <target_directory>\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "Options:\n")
+		flag.PrintDefaults()
+	}
+
 	// Parse flags
 	flag.Parse()
 
@@ -21,7 +28,7 @@ func main() {
 
 	// Check if the target directory is provided
 	if len(args) != 1 {
-		fmt.Println("Usage: go run script.go [-d depth] [-e exception1,exception2,...] <target_directory>")
+		flag.Usage()
 		return
 	}
 
