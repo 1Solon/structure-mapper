@@ -1,23 +1,31 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 	"path/filepath"
 )
 
 func main() {
+	// Define flags
+	depthFlag := flag.Int("d", -1, "maximum recursion depth (-1 for unlimited)")
+	flag.Parse()
+
+	// Remaining arguments after flags
+	args := flag.Args()
+
 	// Check if the target directory is provided
-	if len(os.Args) < 2 {
-		fmt.Println("Usage: go run script.go <target_directory> [exceptions...]")
+	if len(args) < 1 {
+		fmt.Println("Usage: go run script.go [-d depth] <target_directory> [exceptions...]")
 		return
 	}
 
 	// Get the target directory from the first argument
-	targetDir := os.Args[1]
+	targetDir := args[0]
 
 	// Get the list of exceptions from the remaining arguments
-	exceptions := os.Args[2:]
+	exceptions := args[1:]
 
 	// Build a map for faster lookup of exceptions
 	exceptionsMap := make(map[string]bool)
@@ -39,11 +47,15 @@ func main() {
 	// Print the root folder icon
 	fmt.Println("📁")
 
-	// Start printing the directory tree
-	printDirectoryTree(targetDir, "", "", exceptionsMap)
+	// Start printing the directory tree with the specified depth
+	printDirectoryTree(targetDir, "", "", exceptionsMap, *depthFlag)
 }
 
-func printDirectoryTree(rootPath, relativePath, prefix string, exceptions map[string]bool) {
+func printDirectoryTree(rootPath, relativePath, prefix string, exceptions map[string]bool, depth int) {
+	if depth == 0 {
+		return
+	}
+
 	currentPath := filepath.Join(rootPath, relativePath)
 
 	// Read the directory entries, skip if error
@@ -89,6 +101,10 @@ func printDirectoryTree(rootPath, relativePath, prefix string, exceptions map[st
 
 		// Recursively print subdirectories
 		nextRelPath := filepath.Join(relativePath, entry.Name())
-		printDirectoryTree(rootPath, nextRelPath, newPrefix, exceptions)
+		if depth > 0 {
+			printDirectoryTree(rootPath, nextRelPath, newPrefix, exceptions, depth-1)
+		} else {
+			printDirectoryTree(rootPath, nextRelPath, newPrefix, exceptions, depth)
+		}
 	}
 }
