@@ -5,32 +5,45 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 func main() {
 	// Define flags
 	depthFlag := flag.Int("d", -1, "maximum recursion depth (-1 for unlimited)")
+	exceptionsFlag := flag.String("e", "", "comma-separated list of directories to exclude")
+
+	// Parse flags
 	flag.Parse()
 
 	// Remaining arguments after flags
 	args := flag.Args()
 
 	// Check if the target directory is provided
-	if len(args) < 1 {
-		fmt.Println("Usage: go run script.go [-d depth] <target_directory> [exceptions...]")
+	if len(args) != 1 {
+		fmt.Println("Usage: go run script.go [-d depth] [-e exception1,exception2,...] <target_directory>")
 		return
 	}
 
-	// Get the target directory from the first argument
+	// Get the target directory from the positional argument
 	targetDir := args[0]
 
-	// Get the list of exceptions from the remaining arguments
-	exceptions := args[1:]
+	// Parse the exceptions into a slice
+	var exceptionsList []string
+	if *exceptionsFlag != "" {
+		exceptionsList = strings.Split(*exceptionsFlag, ",")
+		// Trim whitespace from each exception
+		for i, ex := range exceptionsList {
+			exceptionsList[i] = strings.TrimSpace(ex)
+		}
+	}
 
 	// Build a map for faster lookup of exceptions
 	exceptionsMap := make(map[string]bool)
-	for _, ex := range exceptions {
-		exceptionsMap[ex] = true
+	for _, ex := range exceptionsList {
+		if ex != "" {
+			exceptionsMap[ex] = true
+		}
 	}
 
 	// Check if the target directory exists and is a directory
