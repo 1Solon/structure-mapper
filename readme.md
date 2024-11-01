@@ -8,8 +8,8 @@ _Structure Mapper is a Go-based utility that prints a visual representation of a
 
 <div align="center">
 
-![GitHub Repo stars](https://img.shields.io/github/stars/1Solon/structure-mapper?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/1Solon/structure-mapper?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/1Solon/treemd?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/1Solon/treemd?style=for-the-badge)
 
 </div>
 
@@ -24,7 +24,7 @@ _Structure Mapper is a Go-based utility that prints a visual representation of a
 You can install the tool using Go:
 
 ```sh
-go install github.com/1Solon/structure-mapper@latest
+go install github.com/1Solon/treemd@latest
 ```
 
 ## 📚 Usage
@@ -32,25 +32,25 @@ go install github.com/1Solon/structure-mapper@latest
 To run the script, use the following command:
 
 ```sh
-structure-mapper <target_directory>
+treemd <target_directory>
 ```
 
 You can also exclude directories from the tree by specifying them as arguments:
 
 ```sh
-structure-mapper -e dir_to_exclude1, dir_to_exclude2 <target_directory>
+treemd -e dir_to_exclude1, dir_to_exclude2 <target_directory>
 ```
 
 To display the directory tree up to a certain depth, use the `-d` flag:
 
 ```sh
-structure-mapper -d 2 <target_directory>
+treemd -d 2 <target_directory>
 ```
 
 If you need a refresher on the available options, use the `-h` flag:
 
 ```sh
-structure-mapper -h
+treemd -h
 ```
 
 ## 📖 Example
@@ -58,7 +58,7 @@ structure-mapper -h
 Running the following command:
 
 ```sh
-structure-mapper -e dir_to_exclude1, dir_to_exclude2 -d 2 /path/to/target_directory
+treemd -e dir_to_exclude1, dir_to_exclude2 -d 2 /path/to/target_directory
 ```
 
 Might produce an output like this:
@@ -81,13 +81,13 @@ To set up the project locally, follow these steps:
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/1Solon/structure-mapper.git
+   git clone https://github.com/1Solon/treemd.git
    ```
 
 2. Navigate to the project directory:
 
    ```sh
-   cd structure-mapper
+   cd treemd
    ```
 
 3. Install the tool
@@ -101,7 +101,7 @@ To set up the project locally, follow these steps:
    Installing with Go:
 
    ```sh
-   go install github.com/1Solon/structure-mapper
+   go install github.com/1Solon/treemd
    ```
 
 ## 📝 License

@@ -1,4 +1,4 @@
-BINARY_NAME=./build/structure-mapper.exe
+BINARY_NAME=./build/treemd.exe
 INSTALL_DIR=/usr/local/bin
 
 build: $(BINARY_NAME)
@@ -10,12 +10,12 @@ run: build
 	$(BINARY_NAME)
 
 install: build
-	go install github.com/1Solon/structure-mapper
+	go install github.com/1Solon/treemd
 
 clean:
 	go clean
 ifeq ($(OS),Windows_NT)
-	del build\\structure-mapper.exe
+	del build\\treemd.exe
 else
 	rm -f $(BINARY_NAME)
 endif
