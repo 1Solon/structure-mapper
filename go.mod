@@ -1,3 +1,3 @@
-module github.com/1Solon/structure-mapper/v1.0.0
+module github.com/1Solon/structure-mapper
 
 go 1.23.2
