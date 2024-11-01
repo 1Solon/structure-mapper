@@ -1,8 +1,8 @@
 <div align="center">
 
-# Structure Mapper
+# TreeMD
 
-_Structure Mapper is a Go-based utility that prints a visual representation of a directory tree._
+_TreeMD is a Go-based utility that prints a visual representation of a directory tree._
 
 </div>
 
