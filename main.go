@@ -18,6 +18,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Usage: %s [options] <target_directory>\n", os.Args[0])
 		fmt.Fprintf(os.Stderr, "Options:\n")
 		flag.PrintDefaults()
+		fmt.Fprintf(os.Stderr, "\nFor more help, see the GitHub: https://github.com/1Solon/structure-mapper\n")
 	}
 
 	// Parse flags
